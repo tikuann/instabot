@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and User Information</title>
+</head>
+<body>
+    {% if user_info %}
+        <h1>User Information</h1>
+        <!-- Your user information display logic here -->
+        <section id="user_info">
+            <h2>User Info:</h2>
+            <ul>
+                {% for key, value in user_info.items %}
+                    <li>{{ key }}: {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+
+    {% if followers_info %}
+        <section id="followers_info">
+            <h2>Followers Info:</h2>
+            <ul>
+                {% for key, value in followers_info.items %}
+                    <li>{{ key }}: {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+
+    {% if following_info %}
+        <section id="following_info">
+            <h2>Following Info:</h2>
+            <ul>
+                {% for key, value in following_info.items %}
+                    <li>{{ key }}: {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% else %}
+        <form method="post" action="{% url 'login_and_user_info' %}">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+    {% endif %}
+</body>
+</html>

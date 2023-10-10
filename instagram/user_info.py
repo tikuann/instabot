@@ -32,9 +32,10 @@ def main():
     
     # フォローを取得
     following = cl.user_following(cl.user_id)
-    print("フォロー:")
-    for follow in following:
-        print(follow)
+
+    for user_id in following:
+        user_info = cl.user_info(user_id)
+        print(user_info)
 
 if __name__ == "__main__":
     main()

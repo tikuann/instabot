@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h1>User Information</h1>
+    <section id="user_info">
+        <h2>User Info:</h2>
+        <ul>
+            {% for key, value in user_info.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="followers_info">
+        <h2>Followers Info:</h2>
+        <ul>
+            {% for key, value in followers_info.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="following_info">
+        <h2>Following Info:</h2>
+        <ul>
+            {% for key, value in following_info.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>
