@@ -11,6 +11,7 @@
         <!-- Your user information display logic here -->
         <section id="user_info">
             <h2>User Info:</h2>
+            <img src="{{ user_info.profile_pic_url }}" alt="Profile Picture">
             <ul>
                 {% for key, value in user_info.items %}
                     <li>{{ key }}: {{ value }}</li>
@@ -21,7 +22,8 @@
 
     {% if followers_info %}
         <section id="followers_info">
-            <h2>Followers Info:</h2>
+            <h2>Following Info:</h2>
+            <img src="{{ followers_info.profile_pic_url }}" alt="Profile Picture">
             <ul>
                 {% for key, value in followers_info.items %}
                     <li>{{ key }}: {{ value }}</li>
@@ -32,7 +34,8 @@
 
     {% if following_info %}
         <section id="following_info">
-            <h2>Following Info:</h2>
+            <h2>Followers Info:</h2>
+            <img src="{{ following_info.profile_pic_url }}" alt="Profile Picture">
             <ul>
                 {% for key, value in following_info.items %}
                     <li>{{ key }}: {{ value }}</li>
